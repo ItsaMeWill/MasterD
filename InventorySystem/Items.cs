@@ -8,9 +8,10 @@ namespace InventorySystem
         private string name, description;
         private int fixedPosition, position, originalPrice, price, quantityAvailable;
         private Rarity itemRarity;
+        private ItemType itemType;
 
         // Item constructor
-        public Items(string name, string description, int fixedPosition, int originalPrice, int price, int quantity, Rarity rarity)
+        public Items(string name, string description, int fixedPosition, int originalPrice, int price, int quantity, Rarity rarity, ItemType itemType)
         {
             this.name = name;
             this.description = description;
@@ -22,6 +23,7 @@ namespace InventorySystem
             this.price = price;
             this.quantityAvailable = quantity;
             this.itemRarity = rarity;
+            this.itemType = itemType;
         }
 
         // Getters
@@ -53,6 +55,11 @@ namespace InventorySystem
         public Rarity GetRarity()
         {
             return itemRarity;
+        }
+
+        public ItemType GetItemType()
+        {
+            return this.itemType;
         }
 
         public int GetPosition()
@@ -104,6 +111,15 @@ namespace InventorySystem
         MAGIC,
         RARE,
         LEGENDARY
+    }
+
+    public enum ItemType
+    {
+        CONSUMABLE,
+        HELMET,
+        ARMOR,
+        PANTS,
+        WEAPON
     }
 
 }

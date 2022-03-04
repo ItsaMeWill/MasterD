@@ -22,28 +22,28 @@ namespace InventorySystem
 
             if (shopType == "Equipment")
             {
-                itemList.Add(new Equipment(0, 0, 1, EquipType.HELMET, "Shadow Beanie", "Make you look sus. Dexterity + 1", 1, 1800, 1800, 1, Rarity.LEGENDARY));
-                itemList.Add(new Equipment(0, 0, 1, EquipType.ARMOR, "Hoodie", "Stylish and helps protect your identity. Dexterity + 1", 2, 1200, 1200, 1, Rarity.MAGIC));
-                itemList.Add(new Equipment(0, 0, 1, EquipType.PANTS, "Sneaky Pants", "For those who likes to move silencly. Dexterity + 1", 3, 1500, 1500, 1, Rarity.MAGIC));
-                itemList.Add(new Equipment(0, 0, 1, EquipType.WEAPON, "Swiss Knife", "A thousand utilities. Dexterity + 1", 4, 2000, 2000, 1, Rarity.RARE));
-                itemList.Add(new Equipment(0, 1, 0, EquipType.HELMET, "Horny Helm", "Makes your headbuts do extra damage. Strength + 1", 5, 1200, 1200, 1, Rarity.COMMON));
-                itemList.Add(new Equipment(0, 1, 0, EquipType.ARMOR, "Dragon? Plate Mail", "Legendary armor made from dragon scales. Or it is from geckos? Strength + 1", 6, 2000, 2000, 1, Rarity.LEGENDARY));
-                itemList.Add(new Equipment(0, 1, 0, EquipType.PANTS, "Sturdy Socks", "Made from heavy and resistant material. Just hope the enemy aims at your feet. Strength + 1", 7, 1500, 1500, 1, Rarity.COMMON));
-                itemList.Add(new Equipment(0, 1, 0, EquipType.WEAPON, "Big Hamma", "Its big. Its heavy. It will hurt. Strength + 1", 8, 1800, 1800, 1, Rarity.MAGIC));
-                itemList.Add(new Equipment(1, 0, 0, EquipType.HELMET, "Pointy Hat", "The unique, legendary, trademark of the wizards. Magic + 1", 9, 2000, 2000, 1, Rarity.LEGENDARY));
-                itemList.Add(new Equipment(1, 0, 0, EquipType.ARMOR, "Confy Long Sleeve Coat", "Its long, its warm and confy. Perfection. Magic + 1", 10, 1800, 1800, 1, Rarity.MAGIC));
-                itemList.Add(new Equipment(1, 0, 0, EquipType.PANTS, "Astral Pants", "A magic imbued, polka-dot boxer underwear. Magic + 1", 11, 1500, 1500, 1, Rarity.RARE));
-                itemList.Add(new Equipment(1, 0, 0, EquipType.WEAPON, "Oak Staff", "Magic staff that increases the user concentration. Or an elderly people tool for balance. Magic + 1", 12, 1200, 1200, 1, Rarity.MAGIC));
+                itemList.Add(new Equipment(0, 0, 1, "Shadow Beanie", "Make you look sus. Dexterity + 1", 1, 1800, 1800, 1, Rarity.LEGENDARY, ItemType.HELMET));
+                itemList.Add(new Equipment(0, 0, 1, "Hoodie", "Stylish and helps protect your identity. Dexterity + 1", 2, 1200, 1200, 1, Rarity.MAGIC, ItemType.ARMOR));
+                itemList.Add(new Equipment(0, 0, 1, "Sneaky Pants", "For those who likes to move silencly. Dexterity + 1", 3, 1500, 1500, 1, Rarity.MAGIC, ItemType.PANTS));
+                itemList.Add(new Equipment(0, 0, 1, "Swiss Knife", "A thousand utilities. Dexterity + 1", 4, 2000, 2000, 1, Rarity.RARE, ItemType.WEAPON));
+                itemList.Add(new Equipment(0, 1, 0, "Horny Helm", "Makes your headbuts do extra damage. Strength + 1", 5, 1200, 1200, 1, Rarity.COMMON, ItemType.HELMET));
+                itemList.Add(new Equipment(0, 1, 0, "Dragon? Plate Mail", "Legendary armor made from dragon scales. Or it is from geckos? Strength + 1", 6, 2000, 2000, 1, Rarity.LEGENDARY, ItemType.ARMOR));
+                itemList.Add(new Equipment(0, 1, 0, "Sturdy Socks", "Made from heavy and resistant material. Just hope the enemy aims at your feet. Strength + 1", 7, 1500, 1500, 1, Rarity.COMMON, ItemType.PANTS));
+                itemList.Add(new Equipment(0, 1, 0, "Big Hamma", "Its big. Its heavy. It will hurt. Strength + 1", 8, 1800, 1800, 1, Rarity.MAGIC, ItemType.WEAPON));
+                itemList.Add(new Equipment(1, 0, 0, "Pointy Hat", "The unique, legendary, trademark of the wizards. Magic + 1", 9, 2000, 2000, 1, Rarity.LEGENDARY, ItemType.HELMET));
+                itemList.Add(new Equipment(1, 0, 0, "Confy Long Sleeve Coat", "Its long, its warm and confy. Perfection. Magic + 1", 10, 1800, 1800, 1, Rarity.MAGIC, ItemType.ARMOR));
+                itemList.Add(new Equipment(1, 0, 0, "Astral Pants", "A magic imbued, polka-dot boxer underwear. Magic + 1", 11, 1500, 1500, 1, Rarity.RARE, ItemType.PANTS));
+                itemList.Add(new Equipment(1, 0, 0, "Oak Staff", "Magic staff that increases the user concentration. Or an elderly people tool for balance. Magic + 1", 12, 1200, 1200, 1, Rarity.MAGIC, ItemType.WEAPON));
                 OrganizeList(itemList, true);
 
             }
 
             else if (shopType == "Consumable")
             {
-                itemList.Add(new Items("Life Potion", "A life recovering potion. HP + 30", 1, 150, 150, 10, Rarity.COMMON));
-                itemList.Add(new Items("Mana Potion", "A wizard must have. MP + 50", 2, 300, 300, 4, Rarity.COMMON));
-                itemList.Add(new Items("Provisions", "A necessity for long travels. Allows resting in the wilderness", 3, 500, 500, 2, Rarity.COMMON));
-                itemList.Add(new Items("Exploding Potion", "Try not to drink this. Causes fire damage", 4, 250, 250, 10, Rarity.COMMON));
+                itemList.Add(new Items("Life Potion", "A life recovering potion. HP + 30", 1, 150, 150, 10, Rarity.COMMON, ItemType.CONSUMABLE));
+                itemList.Add(new Items("Mana Potion", "A wizard must have. MP + 50", 2, 300, 300, 4, Rarity.COMMON, ItemType.CONSUMABLE));
+                itemList.Add(new Items("Provisions", "A necessity for long travels. Allows resting in the wilderness", 3, 500, 500, 2, Rarity.COMMON, ItemType.CONSUMABLE));
+                itemList.Add(new Items("Exploding Potion", "Try not to drink this. Causes fire damage", 4, 250, 250, 10, Rarity.COMMON, ItemType.CONSUMABLE));
                 OrganizeList(itemList, true);
 
             }
@@ -63,11 +63,11 @@ namespace InventorySystem
             } else
             {
                 // Declare and initialize the table with its headers
-                var itemTable = new ConsoleTable("", "Name", "Price", "Quantity", "Rarity", "Description");
+                var itemTable = new ConsoleTable("", "Name", "Price", "Quantity", "Type", "Rarity", "Description");
                 foreach (Items currItem in itemList)
                 {
                     // Add a row with the respective item info
-                    itemTable.AddRow(currItem.GetPosition(), currItem.GetName(), "$ " + currItem.GetPrice(), currItem.GetQuantity(), currItem.GetRarity(), currItem.GetDescription());
+                    itemTable.AddRow(currItem.GetPosition(), currItem.GetName(), "$ " + currItem.GetPrice(), currItem.GetQuantity(), currItem.GetItemType(), currItem.GetRarity(), currItem.GetDescription());
                 }
 
                 // Print the entire table
@@ -105,14 +105,14 @@ namespace InventorySystem
                             isEquipment.GetMagic(),
                             isEquipment.GetStrength(),
                             isEquipment.GetDexterity(),
-                            isEquipment.GetEquipType(),
                             isEquipment.GetName(),
                             isEquipment.GetDescription(),
                             isEquipment.GetFixedPosition(),
                             isEquipment.GetOriginalPrice(),
                             isEquipment.GetOriginalPrice(),
                             1,
-                            isEquipment.GetRarity()
+                            isEquipment.GetRarity(),
+                            isEquipment.GetItemType()
                             );
                             itemList.Add(itemBought);
                         }
@@ -126,7 +126,8 @@ namespace InventorySystem
                                 selectedItem.GetOriginalPrice(),
                                 selectedItem.GetOriginalPrice(),
                                 1,
-                                selectedItem.GetRarity());
+                                selectedItem.GetRarity(),
+                                selectedItem.GetItemType());
                             itemList.Add(itemBought);
                         }
                         // Item added, organize the list and reflect the changes on the shop item list

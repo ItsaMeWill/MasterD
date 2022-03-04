@@ -8,16 +8,14 @@ namespace InventorySystem
         // Unique characteristics, representing the equipment stats
         private int magicPoints, strengthPoints, dexterityPoints;
         private bool equipped;
-        private EquipType equipType;
 
         // Equipment / Items constructor
-        public Equipment(int mag, int str, int dex, EquipType equipType, string name, string desc, int FixedPosition, int originalPrice, int price, int qnt, Rarity rarity) 
-        : base (name, desc, FixedPosition, originalPrice, price, qnt, rarity)
+        public Equipment(int mag, int str, int dex, string name, string desc, int FixedPosition, int originalPrice, int price, int qnt, Rarity rarity, ItemType itemType) 
+        : base (name, desc, FixedPosition, originalPrice, price, qnt, rarity, itemType)
         {
             this.magicPoints = mag;
             this.strengthPoints = str;
             this.dexterityPoints = dex;
-            this.equipType = equipType;
             this.equipped = false;
         }
 
@@ -55,24 +53,10 @@ namespace InventorySystem
             return this.equipped;
         }
 
-        public EquipType GetEquipType()
-        {
-            return this.equipType;
-        }
-
         // Setters
         public void SetEquipped(bool isEquipped)
         {
             this.equipped = isEquipped;
         }
     }
-
-    public enum EquipType
-    {
-        HELMET,
-        ARMOR,
-        PANTS,
-        WEAPON
-    }
-
 }

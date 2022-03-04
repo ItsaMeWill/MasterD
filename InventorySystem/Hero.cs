@@ -49,15 +49,14 @@ namespace InventorySystem
                         isEquipment.GetMagic(),
                         isEquipment.GetStrength(),
                         isEquipment.GetDexterity(),
-                        isEquipment.GetEquipType(),
                         isEquipment.GetName(),
                         isEquipment.GetDescription(),
                         isEquipment.GetFixedPosition(),
                         isEquipment.GetOriginalPrice(),
                         (int)calculatePrice,
                         1,
-                        isEquipment.GetRarity()
-                        );
+                        isEquipment.GetRarity(),
+                        isEquipment.GetItemType());
                         inventory.Add(itemBought);
                     } 
                     // Being null means its not an equipment, so create a new item to add to the hero inventory
@@ -70,8 +69,8 @@ namespace InventorySystem
                         selectedItem.GetOriginalPrice(),
                         (int)calculatePrice,
                         1,
-                        selectedItem.GetRarity()
-                        );
+                        selectedItem.GetRarity(),
+                        selectedItem.GetItemType());
                         inventory.Add(itemBought);
                     }
 
@@ -149,7 +148,7 @@ namespace InventorySystem
             else 
             {
                 // Iterate and print the inventory
-                var inventoryTable = new ConsoleTable("", "Name", "Value", "Quantity", "Rarity", "Description", "Equipped");
+                var inventoryTable = new ConsoleTable("", "Name", "Value", "Quantity", "Type", "Rarity", "Description", "Equipped");
                 foreach (Items currItem in inventory)
                 {
                     // Changes made here: initially, the class Items had the property that defined if the item is equipped or not
@@ -159,10 +158,10 @@ namespace InventorySystem
                     Equipment isEquipment = currItem as Equipment;
                     if(isEquipment != null)
                     {
-                        inventoryTable.AddRow(isEquipment.GetPosition(), isEquipment.GetName(), isEquipment.GetPrice(), isEquipment.GetQuantity(), isEquipment.GetRarity(), isEquipment.GetDescription(), isEquipment.GetEquipped() ? "X" : "");
+                        inventoryTable.AddRow(isEquipment.GetPosition(), isEquipment.GetName(), isEquipment.GetPrice(), isEquipment.GetQuantity(), isEquipment.GetItemType(), isEquipment.GetRarity(), isEquipment.GetDescription(), isEquipment.GetEquipped() ? "X" : "");
                     } else
                     {
-                        inventoryTable.AddRow(currItem.GetPosition(), currItem.GetName(), currItem.GetPrice(), currItem.GetQuantity(), currItem.GetRarity(), currItem.GetDescription(), "");
+                        inventoryTable.AddRow(currItem.GetPosition(), currItem.GetName(), currItem.GetPrice(), currItem.GetQuantity(), currItem.GetItemType(), currItem.GetRarity(), currItem.GetDescription(), "");
                     }
                     
                 }
@@ -227,7 +226,7 @@ namespace InventorySystem
                 if(isEquipment != null)
                 {   
                     // Check which kind of equipment we are searching by matching their properties equipType
-                    if (isEquipment.GetEquipType() == itemToCheck.GetEquipType())
+                    if (isEquipment.GetItemType() == itemToCheck.GetItemType())
                     {
                         // We check to see if this item of the same type is equipped
                         // And it must be different from the itemToCheck (to avoid entering
