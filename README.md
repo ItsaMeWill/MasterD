@@ -1,4 +1,4 @@
-# Videojogos - Master D
+# Master D
 
 Console based exercise proposed by Master D.
 
